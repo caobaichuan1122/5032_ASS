@@ -1,0 +1,83 @@
+﻿@model _5032_ASS.Models.Booking
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Clinic.Clinic_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clinic.Clinic_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booking_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booking_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking_Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booking_Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booking_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booking_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking_Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booking_Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_Id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "BookingTables")
+</p>
