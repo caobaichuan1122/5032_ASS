@@ -30,8 +30,18 @@ namespace _5032_ASS.Controllers
         // GET: Bookings/BookingTables
         public ActionResult BookingTables()
         {
-            var bookings = db.Bookings.Include(b => b.Clinic);
-            return View(bookings.ToList());
+            if (User.IsInRole("admin"))
+            {
+                var booking = db.Bookings.Include(b => b.Clinic);
+                return View(booking.ToList());
+            }
+            else
+            {
+                var userId = User.Identity.GetUserId();
+                var bookings = db.Bookings.Where(b => b.User_Id == userId);
+                return View(bookings.ToList());
+            }
+
         }
 
         // GET: Bookings/Details/5
