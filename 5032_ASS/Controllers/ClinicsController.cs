@@ -21,15 +21,17 @@ namespace _5032_ASS.Controllers
             foreach (var clinic in clinicList)
             {
                 double totalRating = 0;
+                int numRating = 0;
                 var bookingList = db.Bookings.Where(b => b.Clinic_Id == clinic.Id);
                 foreach (var booking in bookingList)
                 {
                     if (booking.Booking_Rating != null)
                     {
                         totalRating += (double)booking.Booking_Rating;
+                        numRating += 1;
                     }
                 }
-                clinic.Clinic_Rating = Math.Round(totalRating / bookingList.Count(),1);
+                clinic.Clinic_Rating = Math.Round(totalRating / numRating, 1);
 
             }
             return View(clinicList);
