@@ -369,6 +369,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\icons\icon-bed-94x94.png" />
+    <Content Include="images\icons\icon-brain-80x80.png" />
+    <Content Include="images\icons\icon-heartbeat-80x80.png" />
+    <Content Include="images\icons\icon-hospital-94x94.png" />
+    <Content Include="images\icons\icon-kidneys-80x80.png" />
+    <Content Include="images\icons\icon-lungs-80x80.png" />
+    <Content Include="images\icons\icon-medic-53x94.png" />
+    <Content Include="images\icons\icon-stethoscope-80x80.png" />
+    <Content Include="images\icons\icon-tooth-80x80.png" />
+    <Content Include="images\logo-default-404x92.png" />
+    <Content Include="images\logo-inverse-404x92.png" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
