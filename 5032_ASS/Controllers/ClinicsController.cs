@@ -17,6 +17,7 @@ namespace _5032_ASS.Controllers
         // GET: Clinics
         public ActionResult Index()
         {
+            // The Clinic aggregated rating
             var clinicList = db.Clinics.ToList();
             foreach (var clinic in clinicList)
             {
@@ -127,6 +128,8 @@ namespace _5032_ASS.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Clinic clinic = db.Clinics.Find(id);
+            //Booking booking = db.Bookings.Find(id);
+            //db.Bookings.Remove(booking);
             db.Clinics.Remove(clinic);
             db.SaveChanges();
             return RedirectToAction("Index");

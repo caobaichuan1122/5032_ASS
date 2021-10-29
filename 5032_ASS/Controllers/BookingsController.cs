@@ -106,9 +106,10 @@ namespace _5032_ASS.Controllers
             }
             String date = booking.Booking_Date.ToShortDateString();
             EmailAsync(booking.Booking_Email, date);
+            
             booking.User_Id = User.Identity.GetUserId();
             ModelState.Clear();
-            TryValidateModel(booking);
+            TryValidateModel(booking);                  
 
             if (ModelState.IsValid)
             {

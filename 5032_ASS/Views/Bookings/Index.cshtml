@@ -1,94 +1,100 @@
 ﻿@model IEnumerable<_5032_ASS.Models.Booking>
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<h2>Index</h2>
-<style>
-    .thang p {
-        display: inline-table
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
     }
-</style>
-<div class="thang">
-    @*<p>
-            @Html.ActionLink("Create New", "Create")
-        </p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>*@
-    <p>
-        @Html.ActionLink("Booking View", "BookingTables")
-    </p>
-</div>
-        <div id="calendar"> </div>
 
-            @*<table class="table">
-                    <thead>
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Clinic.Clinic_Name)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Booking_Name)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Booking_Email)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Booking_Phone)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Booking_Date)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Booking_Description)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Booking_Rating)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.User_Id)
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr class="events">
-                                <td class="title">
-                                    @Html.DisplayFor(modelItem => item.Clinic.Clinic_Name)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Booking_Name)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Booking_Email)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Booking_Phone)
-                                </td>
-                                <td class="start">
-                                    @Html.DisplayFor(modelItem => item.Booking_Date)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Booking_Description)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Booking_Rating)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.User_Id)
-                                </td>
-                                <td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>*@
+    <h2>Index</h2>
+    <style>
+        .thang p {
+            display: inline-table
+        }
+    </style>
+    <div class="thang">
+        @*<p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>*@
+        <p>
+            @Html.ActionLink("Booking View", "BookingTables")
+        </p>
+    </div>
+    <div id="calendar"> </div>
+
+    <table class="table" style="display:none">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Clinic.Clinic_Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking_Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking_Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking_Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking_Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking_Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking_Rating)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.User_Id)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody style="display:none">
+            @foreach (var item in Model)
+            {
+                <tr class="events">
+                    <td class="title">
+                        @Html.DisplayFor(modelItem => item.Clinic.Clinic_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Booking_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Booking_Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Booking_Phone)
+                    </td>
+                    <td class="start">
+                        @Html.DisplayFor(modelItem => item.Booking_Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Booking_Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Booking_Rating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User_Id)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
     @section scripts{
         @Scripts.Render("~/bundles/fullcalendar")
+        <script>
+            $(document).ready(function () {
+                $('.table').DataTable();
+            });
+        </script>
     }
+
